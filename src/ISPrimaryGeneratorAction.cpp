@@ -48,11 +48,11 @@ void ISPrimaryGeneratorAction::DefineCommands()
 
   // Kinetic energy
   G4GenericMessenger::Command &setEneCmd = fMessenger->DeclareMethodWithUnit(
-      "K", "keV", &InSbPrimaryGeneratorAction::SetEnergy,
+      "K", "keV", &ISPrimaryGeneratorAction::SetEnergy,
       "Set the kinetic energy.");
 
   setEneCmd.SetParameterName("K", true);
-  setEneCmd.SetRange("K>=1. && k<10000.");
+  setEneCmd.SetRange("K>=1. && K<10000.");
   setEneCmd.SetDefaultValue("10");
 }
 
